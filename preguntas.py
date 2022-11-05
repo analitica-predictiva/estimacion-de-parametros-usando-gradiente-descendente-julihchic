@@ -8,6 +8,9 @@ polinomial de grado `n`.
 """
 
 
+from re import X
+
+
 def pregunta_01():
     """
     Complete el código presentado a continuación.
@@ -25,7 +28,7 @@ def pregunta_01():
     poly = PolynomialFeatures(degree=2, include_bias=True)
 
     # Transforme la columna `x` del dataset `data` usando el objeto `poly`
-    x_poly = poly.fit_transform(data[[x]])
+    x_poly = poly.fit_transform(data[X])
 
     # Retorne x y y
     return x_poly, data.y

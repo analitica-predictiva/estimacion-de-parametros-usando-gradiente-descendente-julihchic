@@ -13,19 +13,19 @@ def pregunta_01():
     Complete el código presentado a continuación.
     """
     # Importe pandas
-    import ___ as ___
+    import pandas as pd
 
     # Importe PolynomialFeatures
-    from ___ import ___
+    from sklearn.preprocessing import PolynomialFeatures
 
     # Cargue el dataset `data.csv`
-    data = ___.___("___")
+    data = pd.read_csv("data.csv")
 
     # Cree un objeto de tipo `PolynomialFeatures` con grado `2`
-    poly = ___.___(___)
+    poly = PolynomialFeatures(degree=2, include_bias=True)
 
     # Transforme la columna `x` del dataset `data` usando el objeto `poly`
-    x_poly = poly.___(data[["___"]])
+    x_poly = poly.fit_transform(data[[x]])
 
     # Retorne x y y
     return x_poly, data.y
